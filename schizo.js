@@ -11714,6 +11714,7 @@ function schizo(code) {
 
 
 //    return JSON.stringify(ast, null, 4);
-    return escodegen.generate(ast, options);
+    return escodegen.generate(ast, options) 
+    + "\n//randomly formatted by SchizoJS\n//https://github.com/rottytooth/SchizoJS";
 
 }

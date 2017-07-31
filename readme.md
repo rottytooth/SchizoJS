@@ -1,5 +1,6 @@
 
-Schizo diversifies your JS coding style by applying a random coding standard across your code. Not a true obfuscator, Schizo leaves code readable, if molded into an unexpected form. Schizo is a coding anti-style.
+Schizo diversifies your JS coding style by applying a random coding standard. Schizo is a coding anti-style. Best used if re-run with each revision of your code.
+
 
 Schizo'd code:
 - uses sometimes tabs, sometimes spaces
