@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SchizoJS</title>
+    <script type="text/javascript" src="schizo.js"></script>
+    <script type="text/javascript">
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            var btnSubmit = document.getElementById('btnSubmit');
+            btnSubmit.addEventListener('click', function(e) {
+                var errors = document.getElementById('errors');
+                var newprogram = document.getElementById('newprogram');
+                var jstext = document.getElementById('jstext');
+
+                newprogram.textContent = '';
+
+                var code = jstext.value;
+
+                var result = schizo(code);
+                newprogram.textContent = result;
+            });
+        });
+    </script>
+    <style>
+        body {
+            padding: 20px;
+            margin-bottom: 70px;
+        }
+
+        body, * {
+            font-family: Consolas,monaco,monospace;
+            font-size: 14px;
+            line-height: 1.4em;
+        }
+        textarea {
+            font: 'Courier', monospace; 
+            padding-top: 15px !important;
+            height: 385px !important;
+        }
+        .boxy {
+            -moz-appearance: textfield-multiline;
+            -webkit-appearance: textarea;
+            border: 1px solid gray;
+            font: medium -moz-fixed;
+            font: -webkit-small-control;
+            overflow: auto;
+            padding: 0px;
+            resize: both;
+            width: 400px;
+            height: 400px;
+            margin: 0px;
+        }
+        #outbox {
+            width: 600px !important;
+        }
+
+        .holder {
+            margin: 10px;
+            float: left;
+        }
+
+        h1 {
+            font-size: 2em;
+            font-weight: normal;
+        }
+
+        h2 {
+            margin-left: 10px;
+        }
+
+        #headerBreak {
+            margin-bottom: 60px;
+        }
+
+        h3 {
+            font-weight: bold;
+        }
+
+        p, li, textarea, .actions {
+            width: 100%;
+            max-width: 800px;
+        }
+
+        ul.pre li {
+            white-space: pre;
+        }
+
+        .checkbox {
+            display: inline-block;
+        }
+
+        .actions a {
+            float: right;
+        }
+
+        .actions {
+            clear: both;
+        }
+
+        .greyback {
+            background-color: #eeeeee;
+            width: 800px;
+            line-height: 200%;
+        }
+        #outbox, .boxy {
+            background-color: #ffffff;
+        }
+
+        p {
+            margin-top: 20px;
+        }
+        p, li {
+            line-height: 180%;
+        }
+        #errors {
+            margin-left: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>SchizoJS</h1>
+
+    <h2><a href="http://danieltemkin.com">Daniel Temkin</a>, 2017</h2>
+    <h2><a href="https://github.com/rottytooth/SchizoJS">on GitHub</a></h2>
+
+    <br id="headerBreak" />
+
+    <p>
+        Schizo diversifies your JS coding style by applying a random coding standard 
+        across your code. Not a true obfuscator, Shizo leaves code readable, 
+        if rended in an unexpected form. Schizo is a coding anti-style.
+    </p>
+
+Schizo'd code:
+<ul>
+<li>uses tabs or spaces</li>
+<li>uses standard JS indent style <a href="https://en.wikipedia.org/wiki/Indent_style">or one of the others</a></li>
+<li>uses single-quotes or double-quotes</li>
+<li>requires semi-colons or not</li>
+</ul>
+        
+
+
+    <div id="testSection">
+        <div class="holder">
+            <b>INPUT</b><br><br>
+            <textarea id="jstext" class="boxy">
+var x = function() {
+    function loopForSomeReason() {
+        for(var i = 0; i < 97; i++) {
+            for (var j = -1; j < 101; j++) {
+                console.log(i.toString() + "," + j.toString());
+            }
+        }
+    }                
+}
+            </textarea>
+            <br />
+            <input type="button" value="Submit" id="btnSubmit" />
+        </div>
+        <div class="holder">
+            <b>STYLED</b><br><br>
+            <div id="outbox" class="boxy">
+                <pre><code id="newprogram"></code></pre>
+            </div>
+        </div>
+    </div>
+    <br clear="all" />
+</body>
+</html>
