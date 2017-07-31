@@ -3,8 +3,9 @@ Schizo diversifies your JS coding style by applying a random coding standard. Sc
 
 
 Schizo'd code:
-- uses sometimes tabs, sometimes spaces
+- uses tabs and/or spaces
 - uses standard JS indent style or one of the others https://en.wikipedia.org/wiki/Indent_style
-- single-quote or double-quote
-- semi-colons required or not
+- preferes single-quote or double-quote
+- requires semi-colons or doesn't
+
 
